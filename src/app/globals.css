@@ -7,6 +7,8 @@
   --color-Blanco: #ffffff;
   --color-GrisOscuro: #1a1a1a; /* texto principal */
   --color-GrisClaro: #a5a5a5; /* testo secundario o de apoyo */
+
+  /* animaciones */
 }
 
 @media (min-width: 768px) {

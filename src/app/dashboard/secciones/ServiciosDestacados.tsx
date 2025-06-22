@@ -1,6 +1,11 @@
 import Card from "@/app/components/Card";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 function ServiciosDestacados() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-5% 0px -5% 0px" });
+
   const serviciosDestacados = [
     {
       src: "/image/tendido-aereo.jpg",
@@ -20,12 +25,18 @@ function ServiciosDestacados() {
   ];
 
   return (
-    <section className="flex flex-col gap-5 p-10 md:p-20">
-      <h2 className="text-3xl md:text-5xl font-bold mb-15 text-center">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, y: 100 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      className="flex flex-col gap-5 px-10 md:px-20"
+    >
+      <h2 className="text-3xl md:text-5xl font-bold mb-5 text-center">
         Servicios Destacados
       </h2>
       <Card datos={serviciosDestacados} />
-    </section>
+    </motion.section>
   );
 }
 

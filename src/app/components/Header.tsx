@@ -24,6 +24,7 @@ export default function Header() {
           width={201}
           height={167}
           className="w-10 md:w-20"
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
 
         {/* Botón y menú */}

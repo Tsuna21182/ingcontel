@@ -4,8 +4,8 @@ import Image from "next/image";
 import BtnPrincipal from "../components/BtnPrincipal";
 import ServiciosDestacados from "./secciones/ServiciosDestacados";
 import Elegirnos from "./secciones/Elegirnos";
-
 import { useState, useEffect } from "react";
+import ImageCarousel from "../components/Carousel";
 
 function DashboarPage() {
   const [mostrar, setMostrar] = useState(false);
@@ -56,6 +56,12 @@ function DashboarPage() {
       </section>
       <section className="mt-10">
         <Elegirnos />
+      </section>
+      <section className="mt-10 flex justify-around">
+        <ImageCarousel />
+        <div className="hidden md:block">
+          <ImageCarousel />
+        </div>
       </section>
     </>
   );

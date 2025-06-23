@@ -17,9 +17,7 @@ export default function NavBar({ links, className, onLinkClick }: NavBarProps) {
   const pathname = usePathname();
 
   return (
-    <nav
-      className={`flex flex-col md:flex-row gap-5 font-semibold ${className}`}
-    >
+    <nav className={`flex gap-5 font-semibold text-white ${className}`}>
       {links.map((link) => (
         <Link
           key={link.href}

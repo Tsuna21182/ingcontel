@@ -1,4 +1,4 @@
-import NavBar from "./NavBar";
+import Sociales from "./Sociales";
 
 function Footer() {
   const navLinks = [
@@ -8,14 +8,14 @@ function Footer() {
   ];
 
   return (
-    <footer className="bg-AzulCorporativo p-5 text-white">
+    <footer className="bg-AzulCorporativo p-5 text-white space-y-5">
       <div className="text-sm">
         <h3 className="font-bold uppercase text-lg">ingcontel s.a.s</h3>
         <p>Cll 50 Eur if 30 - 25</p>
         <p>Bucaramanga, Santander</p>
       </div>
       <div>
-        <NavBar links={navLinks} className={"flex-row text-sm my-3"} />
+        <Sociales />
       </div>
       <div className="flex gap-3 text-sm">
         <div>

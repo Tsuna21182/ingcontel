@@ -8,7 +8,10 @@
   --color-GrisOscuro: #1a1a1a; /* texto principal */
   --color-GrisClaro: #a5a5a5; /* testo secundario o de apoyo */
 
-  /* animaciones */
+  /* breakpoint */
+
+  --breakpoint-2md: 56.25rem;
+  --breakpoint-3xl: 120rem;
 }
 
 @media (min-width: 768px) {

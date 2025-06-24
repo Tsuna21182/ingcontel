@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import NavBar from "./NavBar";
 import Example from "./FlyoutMenus";
@@ -12,8 +11,6 @@ const navLinks = [
 ];
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-
   return (
     <header className="absolute z-50 w-full">
       <section className="flex justify-between items-center p-5 md:p-10 lg:p-20">
@@ -29,7 +26,7 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <Example />
 
-          <NavBar links={navLinks} className={`hidden md:flex`} />
+          <NavBar links={navLinks} className={`hidden md:flex gap-5`} />
         </div>
       </section>
     </header>

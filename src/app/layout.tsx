@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -16,16 +17,26 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const pathname = usePathname;
+  const pathname = usePathname();
 
   return (
     <html lang="en">
       <body
         className={`${montserrat.className} antialiased relative bg-gray-100 `}
       >
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={pathname}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+            viewport={{ once: true, amount: 0.2 }}
+          >
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </motion.div>
+        </AnimatePresence>
       </body>
     </html>
   );

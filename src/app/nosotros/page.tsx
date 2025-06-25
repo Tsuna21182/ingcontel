@@ -1,31 +1,68 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 function page() {
   return (
-    <section className="bg-AzulCorporativo">
-      <div className="bg-AzulCorporativo h-96"></div>
-      <h1 className="text-6xl absolute top-25 left-10 md:top-35 md:left-15 lg:top-45 lg:left-25 text-Blanco font-bold">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true, amount: 0.2 }}
+      className="bg-AzulCorporativo py-10 px-6"
+    >
+      <h1 className="text-3xl text-white font-bold text-center mb-6 md:mt-30 lg:mt-40">
         Nosotros
       </h1>
-      <section className="grid md:grid-cols-2 justify-center items-center mt-10 md:mt-0 p-10 xl:p-13 bg-white">
+      <section className="grid md:grid-cols-2 justify-center items-center mt-10 md:mt-0 p-10 xl:p-13 bg-white rounded-2xl">
         <div>
-          <p className="text-base xl:text-xl 2xl:text-3xl md:mr-8 3xl:ml-20">
+          <p className="max-w-3xl mx-auto text-center text-gray-700">
             Somos una empresa con amplia trayectoria en telecomunicaciones,
             destacandonos por proyectos exitosos en fibra optica, cableado
             estructurado y soluciones tecnologicas para empresas y hogares a
             nivel nacional.
           </p>
+          <div className="relative mt-10 w-full md:hidden">
+            <Image
+              src="/image/reunion.png"
+              alt="imagen nosotros"
+              width={1280}
+              height={771}
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="rounded-lg"
+            />
+          </div>
         </div>
-        <Image
-          src="/image/nosotros.png"
-          alt="imagen nosotros"
-          width={853}
-          height={1280}
-          className="-mt-15 md:mt-0 md:absolute md:-top-25.5 md:left-40 2md:left-55 2md:-top-51 lg:-top-51 lg:left-75 xl:-top-40 xl:left-[30rem] 2xl:-top-30 2xl:left-[40rem] 3xl:-top-30 3xl:left-[60rem]"
-        />
+
+        <div className="hidden md:block relative ">
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="absolute -right-60 -top-[27rem] lg:-right-50 lg:-top-[27.5rem] w-[45rem] h-[55rem]"
+          >
+            <Image
+              src="/image/nosotros.png"
+              alt="Imagen nosotros"
+              fill
+              className="object-contain"
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </motion.div>
+        </div>
       </section>
-      <section className="flex flex-col lg:flex-row gap-10 p-10 bg-white mt-10">
-        <div className="space-y-5">
+      <section className="flex flex-col lg:flex-row gap-10 mt-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="space-y-5 bg-white p-10 rounded-2xl"
+        >
           <h2 className="font-bold uppercase text-2xl">misión</h2>
           <p className="text-lg">
             Somos una empresa que brinda soluciones integrales de
@@ -33,8 +70,14 @@ function page() {
             y recurso humano competente, calificado y comprometido con el
             cumplimiento de las metas planteadas.
           </p>
-        </div>
-        <div className="space-y-5">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.2 }}
+          className="space-y-5 bg-white p-10 rounded-2xl"
+        >
           <h2 className="font-bold uppercase text-2xl">visión</h2>
           <p className="text-lg">
             Para el año 2025 <strong className="uppercase">ingcontel</strong>{" "}
@@ -42,9 +85,9 @@ function page() {
             el desarrillo de proyectos de telecomunicaciones, con innovación
             constante e infraestructura tecnológica.
           </p>
-        </div>
+        </motion.div>
       </section>
-    </section>
+    </motion.section>
   );
 }
 

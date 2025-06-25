@@ -11,9 +11,15 @@ type NavBarProps = {
   }[];
   className?: string;
   onLinkClick?: () => void;
+  disableActive?: boolean;
 };
 
-export default function NavBar({ links, className, onLinkClick }: NavBarProps) {
+export default function NavBar({
+  links,
+  className,
+  onLinkClick,
+  disableActive = false,
+}: NavBarProps) {
   const pathname = usePathname();
 
   return (
@@ -25,9 +31,9 @@ export default function NavBar({ links, className, onLinkClick }: NavBarProps) {
           onClick={onLinkClick}
           className={clsx(
             "py-2 px-4 rounded-xl transition-all duration-300 hover:bg-Blanco hover:text-GrisOscuro",
-            {
-              "bg-Blanco text-GrisOscuro": pathname === link.href,
-            }
+            !disableActive && pathname === link.href
+              ? "bg-Blanco text-GrisOscuro"
+              : ""
           )}
         >
           {link.label}

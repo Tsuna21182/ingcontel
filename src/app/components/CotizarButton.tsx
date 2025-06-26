@@ -29,7 +29,7 @@ export default function CotizarButton() {
       <Modal isOpen={open} onClose={() => setOpen(false)}>
         {enviado ? (
           <div className="text-center py-10">
-            <p className="text-green-600 font-semibold text-lg">
+            <p className="text-green-400 font-bold text-xl">
               ¡Enviado con éxito!
             </p>
             <motion.div
@@ -38,29 +38,29 @@ export default function CotizarButton() {
               transition={{ type: "spring", stiffness: 300, delay: 0.2 }}
               className="flex justify-center mt-4"
             >
-              <FaCheckCircle className="text-green-500 text-5xl" />
+              <FaCheckCircle className="text-green-400 text-5xl" />
             </motion.div>
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
-            <h2 className="text-2xl font-bold mb-7 text-center">
+            <h2 className="text-2xl font-bold mb-7 text-center text-white">
               Solicita tu cotización
             </h2>
             <input
               required
               type="text"
               placeholder="Nombre"
-              className="w-full border border-gray-500 px-4 py-4 rounded-lg placeholder:font-bold"
+              className="w-full border text-white font-semibold border-white px-4 py-4 rounded-lg placeholder:font-bold placeholder:text-white outline-0"
             />
             <input
               required
               type="email"
               placeholder="Correo"
-              className="w-full border border-gray-500 px-4 py-4 rounded-lg placeholder:font-bold"
+              className="w-full border text-white font-semibold border-white px-4 py-4 rounded-lg placeholder:font-bold placeholder:text-white outline-0"
             />
             <textarea
               placeholder="Mensaje"
-              className="w-full border border-gray-500 px-4 py-3 rounded-lg resize-none placeholder:font-bold"
+              className="w-full border text-white font-semibold border-white px-4 py-3 rounded-lg resize-none placeholder:font-bold placeholder:text-white outline-0"
               rows={3}
             />
             <button

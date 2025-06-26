@@ -61,10 +61,12 @@ function page() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="space-y-5 bg-white p-10 rounded-2xl"
+          className="space-y-5 bg-white rounded-2xl"
         >
-          <h2 className="font-bold uppercase text-2xl">misión</h2>
-          <p className="text-lg">
+          <div className="rightPointPolygon bg-AzulBrillante w-50 p-2 text-white mt-10">
+            <h2 className="font-bold uppercase text-2xl ml-10">misión</h2>
+          </div>
+          <p className="text-lg px-10 mb-10">
             Somos una empresa que brinda soluciones integrales de
             telecomunicaciones a través de infraestructura tecnológica adecuada
             y recurso humano competente, calificado y comprometido con el
@@ -76,10 +78,12 @@ function page() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true, amount: 0.2 }}
-          className="space-y-5 bg-white p-10 rounded-2xl"
+          className="space-y-5 bg-white rounded-2xl"
         >
-          <h2 className="font-bold uppercase text-2xl">visión</h2>
-          <p className="text-lg">
+          <div className="rightPointPolygon bg-AzulBrillante w-50 p-2 text-white mt-10">
+            <h2 className="font-bold uppercase text-2xl ml-10">visión</h2>
+          </div>
+          <p className="text-lg px-10 mb-10">
             Para el año 2025 <strong className="uppercase">ingcontel</strong>{" "}
             será reconocida a nivel nacional como una empresa a la vanguardia en
             el desarrillo de proyectos de telecomunicaciones, con innovación

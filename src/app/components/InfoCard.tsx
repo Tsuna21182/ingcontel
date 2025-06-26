@@ -30,6 +30,7 @@ export default function InfoCard({
           src={imageUrl}
           alt={title}
           fill
+          priority
           className="object-cover"
           sizes="(max-width: 768px) 100vw, 50vw"
         />

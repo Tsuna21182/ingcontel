@@ -116,7 +116,12 @@ export default function CotizarButton() {
 
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white font-semibold text-lg px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all duration-300 cursor-pointer"
+              disabled={enviado}
+              className={`w-full bg-indigo-600 text-white font-semibold text-lg px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${
+                enviado
+                  ? "opacity-50 cursor-not-allowed"
+                  : "hover:bg-indigo-700"
+              }`}
             >
               Enviar
             </button>

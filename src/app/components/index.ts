@@ -1,0 +1,11 @@
+export { default as BtnPrincipal } from "./BtnPrincipal";
+export { default as Card } from "./Card";
+export { default as ImageCarousel } from "./Carousel";
+export { default as CotizarButton } from "./CotizarButton";
+export { default as FlyoutMenus } from "./FlyoutMenus";
+export { default as Footer } from "./Footer";
+export { default as Header } from "./Header";
+export { default as InfoCard } from "./InfoCard";
+export { default as Modal } from "./Modal";
+export { default as NavBar } from "./NavBar";
+export { default as Sociales } from "./Sociales";

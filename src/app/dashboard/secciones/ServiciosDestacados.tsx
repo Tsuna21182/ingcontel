@@ -1,4 +1,4 @@
-import Card from "@/app/components/Card";
+import { Card } from "@/app/components";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 

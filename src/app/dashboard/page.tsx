@@ -1,11 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import CotizarButton from "../components/CotizarButton";
 import ServiciosDestacados from "./secciones/ServiciosDestacados";
 import Elegirnos from "./secciones/Elegirnos";
 import { useState, useEffect } from "react";
-import ImageCarousel from "../components/Carousel";
+import { ImageCarousel, CotizarButton } from "../components";
 
 function DashboarPage() {
   const [mostrar, setMostrar] = useState(false);

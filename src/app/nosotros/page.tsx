@@ -56,7 +56,7 @@ function page() {
         </div>
       </section>
       <section className="flex flex-col lg:flex-row gap-10 mt-10">
-        <motion.div
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -72,8 +72,8 @@ function page() {
             y recurso humano competente, calificado y comprometido con el
             cumplimiento de las metas planteadas.
           </p>
-        </motion.div>
-        <motion.div
+        </motion.section>
+        <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -89,7 +89,7 @@ function page() {
             el desarrillo de proyectos de telecomunicaciones, con innovación
             constante e infraestructura tecnológica.
           </p>
-        </motion.div>
+        </motion.section>
       </section>
     </motion.section>
   );

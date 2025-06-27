@@ -3,18 +3,56 @@ import { useState } from "react";
 import Modal from "./Modal";
 import { motion } from "framer-motion";
 import { FaCheckCircle } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 export default function CotizarButton() {
   const [open, setOpen] = useState(false);
   const [enviado, setEnviado] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [error, setError] = useState("");
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setEnviado(true);
-    setTimeout(() => {
-      setOpen(false);
-      setEnviado(false);
-    }, 2000);
+    setError("");
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("Todos los campos son obligatorios");
+      return;
+    }
+
+    try {
+      const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+      const adminTemplateID =
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ADMIN_ID!;
+      const userTemplateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_USER_ID!;
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!;
+
+      await emailjs.send(serviceID, adminTemplateID, formData, publicKey);
+
+      await emailjs.send(serviceID, userTemplateID, formData, publicKey);
+
+      setEnviado(true);
+      setFormData({ name: "", email: "", message: "" });
+
+      setTimeout(() => {
+        setOpen(false);
+        setEnviado(false);
+      }, 3000);
+    } catch (err) {
+      console.error("Error al enviar:", err);
+      setError("Hubo un error al enviar el formulario");
+    }
   };
 
   return (
@@ -46,23 +84,36 @@ export default function CotizarButton() {
             <h2 className="text-2xl font-bold mb-7 text-center text-white">
               Solicita tu cotización
             </h2>
+
             <input
-              required
               type="text"
+              name="name"
               placeholder="Nombre"
+              value={formData.name}
+              onChange={handleChange}
               className="w-full border text-white font-semibold border-white px-4 py-4 rounded-lg placeholder:font-bold placeholder:text-white outline-0"
+              required
             />
             <input
-              required
               type="email"
+              name="email"
               placeholder="Correo"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full border text-white font-semibold border-white px-4 py-4 rounded-lg placeholder:font-bold placeholder:text-white outline-0"
+              required
             />
             <textarea
+              name="message"
               placeholder="Mensaje"
+              value={formData.message}
+              onChange={handleChange}
               className="w-full border text-white font-semibold border-white px-4 py-3 rounded-lg resize-none placeholder:font-bold placeholder:text-white outline-0"
               rows={3}
+              required
             />
+            {error && <p className="text-red-400 font-semibold">{error}</p>}
+
             <button
               type="submit"
               className="w-full bg-indigo-600 text-white font-semibold text-lg px-4 py-2 rounded-lg hover:bg-indigo-700 transition-all duration-300 cursor-pointer"

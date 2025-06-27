@@ -2,8 +2,7 @@
 
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import { Header, Footer } from "./components";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 

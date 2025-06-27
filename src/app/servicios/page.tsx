@@ -1,4 +1,4 @@
-import InfoCard from "../components/InfoCard";
+import { InfoCard } from "../components";
 import datosServicios from "@/data/datosServicios";
 
 function page() {

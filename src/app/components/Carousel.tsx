@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const images = [
-  "/image/huawei.png",
-  "/image/inmel.png",
-  "/image/telebucaramanga.png",
-  "/image/optecom.png",
-  // Agrega más si las tienes en /public
+  "/image/huawei.webp",
+  "/image/inmel.webp",
+  "/image/telebucaramanga.webp",
+  "/image/optecom.webp",
 ];
 
 export default function ImageCarousel() {
@@ -19,17 +18,16 @@ export default function ImageCarousel() {
   const prevSlide = () =>
     setCurrent((prev) => (prev === 0 ? images.length - 1 : prev - 1));
 
-  // 👇 Auto slide cada 5 segundos
   useEffect(() => {
     const interval = setInterval(() => {
       nextSlide();
     }, 5000);
 
-    return () => clearInterval(interval); // Limpia al desmontar
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative w-60 overflow-hidden rounded-xl my-10">
+    <div className="relative md:w-auto md:p-5 overflow-hidden">
       <div className="relative h-20 sm:h-46">
         <Image
           src={images[current]}

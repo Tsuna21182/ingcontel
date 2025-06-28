@@ -15,7 +15,7 @@ export default function Header() {
     <header className="absolute z-50 w-full">
       <section className="flex justify-between items-center p-5 md:p-10 lg:p-20">
         <Image
-          src="/image/logo-ingcontel.png"
+          src="/image/logo-ingcontel.webp"
           alt="Logo"
           width={201}
           height={167}

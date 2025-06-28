@@ -8,12 +8,12 @@ function ServiciosDestacados() {
 
   const serviciosDestacados = [
     {
-      src: "/image/tendido-aereo.jpg",
+      src: "/image/tendido-aereo.webp",
       title: "Fibra Optica Aerea",
       description: "Respetando las normativas y protocolos.",
     },
     {
-      src: "/image/tendido-canalizado.jpeg",
+      src: "/image/tendido-canalizado.webp",
       title: "Canalizacion de Fibra Optica",
       description: "Utilizando materiales de calidad y duraderos.",
     },

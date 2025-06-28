@@ -1,34 +1,34 @@
 const datosServicios = [
   {
     id: 1,
-    title: "Zonas WIFI",
+    title: "Zonas WiFi",
     description:
-      "Te ofrecemos experiencia y tecnologia para lograr redes inalambricas orientadas a tu necesidad",
-    imagenUrl: "/image/zonas-wifi.png",
+      "Diseñamos e implementamos redes inalámbricas seguras, eficientes y adaptadas a las necesidades específicas de tu entorno empresarial o institucional.",
+    imagenUrl: "/image/zonas-wifi.webp",
     linkUrl: "/servicios",
   },
   {
     id: 2,
-    title: "Redes Electricas",
+    title: "Redes Eléctricas",
     description:
-      "Contamos con estructura para desarrillar proyectos electricos de baja tension soportados en las normas y la seguridad requerida.",
-    imagenUrl: "/image/redes-electricas.png",
+      "Desarrollamos proyectos de redes eléctricas de baja tensión cumpliendo con las normativas técnicas y estándares de seguridad exigidos en el sector.",
+    imagenUrl: "/image/redes-electricas.webp",
     linkUrl: "/servicios",
   },
   {
     id: 3,
     title: "Cableado Estructurado",
     description:
-      "Construcción de cableado estructurado bajo los estandares de calidad que permita soportar lo mas importante en su empresa, su sistema de información.",
-    imagenUrl: "/image/cableado-estructurado.png",
+      "Instalamos sistemas de cableado estructurado de alto rendimiento, diseñados para garantizar la integridad y estabilidad de tu infraestructura de red.",
+    imagenUrl: "/image/cableado-estructurado.webp",
     linkUrl: "/servicios",
   },
   {
     id: 4,
-    title: "Circuito Cerrado de Video",
+    title: "Circuito Cerrado de Televisión (CCTV)",
     description:
-      "Contamos con personal calificado y con experiencia que te ayudara a diseñar e implementar el sistema de seguridad que necesites.",
-    imagenUrl: "/image/circuito-de-video.png",
+      "Implementamos soluciones de videovigilancia a medida, con tecnología de última generación y personal calificado para garantizar la seguridad de tus espacios.",
+    imagenUrl: "/image/circuito-de-video.webp",
     linkUrl: "/servicios",
   },
 ];

@@ -17,7 +17,7 @@ function Footer() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true, amount: 0.2 }}
-      className="bg-AzulCorporativo p-5 text-white space-y-10 flex flex-col"
+      className="bg-[url('/footer-bg.svg')] bg-no-repeat bg-cover bg-top text-white p-5 space-y-10 flex flex-col"
     >
       <div className="text-sm space-y-5">
         <div>

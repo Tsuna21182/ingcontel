@@ -1,12 +1,12 @@
 "use client";
 
-import { Montserrat } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Header, Footer } from "./components";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 
-const montserrat = Montserrat({
+const font = Poppins({
   subsets: ["latin"],
   weight: ["400", "700", "900"],
 });
@@ -20,9 +20,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${montserrat.className} antialiased relative bg-gray-100 `}
-      >
+      <body className={`${font.className} antialiased relative bg-gray-100 `}>
         <AnimatePresence mode="wait">
           <motion.div
             key={pathname}

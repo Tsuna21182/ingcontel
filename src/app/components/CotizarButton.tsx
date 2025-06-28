@@ -2,7 +2,12 @@
 import { useState } from "react";
 import Modal from "./Modal";
 import { motion } from "framer-motion";
-import { FaCheckCircle } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaUser,
+  FaEnvelope,
+  FaRegCommentDots,
+} from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 
 export default function CotizarButton() {
@@ -84,40 +89,48 @@ export default function CotizarButton() {
             <h2 className="text-2xl font-bold mb-7 text-center text-white">
               Solicita tu cotización
             </h2>
-
-            <input
-              type="text"
-              name="name"
-              placeholder="Nombre"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full border text-white font-semibold border-white px-4 py-4 rounded-lg placeholder:font-bold placeholder:text-white outline-0"
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Correo"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full border text-white font-semibold border-white px-4 py-4 rounded-lg placeholder:font-bold placeholder:text-white outline-0"
-              required
-            />
-            <textarea
-              name="message"
-              placeholder="Mensaje"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full border text-white font-semibold border-white px-4 py-3 rounded-lg resize-none placeholder:font-bold placeholder:text-white outline-0"
-              rows={3}
-              required
-            />
+            <div className="flex items-center border border-white rounded-lg px-4 py-3 text-white">
+              <FaUser className="mr-3 w-8 h-8 text-white" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Nombre"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full  text-white font-semibold placeholder:font-bold placeholder:text-white outline-0"
+                required
+              />
+            </div>
+            <div className="flex items-center border border-white rounded-lg px-4 py-3 text-white">
+              <FaEnvelope className="mr-3 w-8 h-8 text-white" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Correo"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full bg-transparent outline-none placeholder:font-bold placeholder:text-white text-white font-semibold"
+                required
+              />
+            </div>
+            <div className="flex items-start border border-white rounded-lg px-4 py-3 text-white">
+              <FaRegCommentDots className=" mr-3 w-8 h-8 text-white" />
+              <textarea
+                name="message"
+                placeholder="Mensaje"
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full bg-transparent outline-none resize-none placeholder:font-bold placeholder:text-white text-white font-semibold"
+                rows={3}
+                required
+              />
+            </div>
             {error && <p className="text-red-400 font-semibold">{error}</p>}
 
             <button
               type="submit"
               disabled={enviado}
-              className={`w-full bg-indigo-600 text-white font-semibold text-lg px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${
+              className={`w-full bg-indigo-500 text-white font-semibold text-lg px-4 py-2 rounded-lg transition-all duration-300 cursor-pointer ${
                 enviado
                   ? "opacity-50 cursor-not-allowed"
                   : "hover:bg-indigo-700"

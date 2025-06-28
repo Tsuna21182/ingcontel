@@ -14,7 +14,7 @@ function Elegirnos() {
       className="grid md:grid-cols-2 md:items-center m-10 md:mx-20 mt-0 bg-Blanco rounded-2xl shadow-xl"
     >
       <div className="p-10 flex flex-col">
-        <h3 className="text-2xl md:text-4xl font-bold">¿Por Qué Elegirnos?</h3>
+        <h2 className="text-2xl md:text-4xl font-bold">¿Por Qué Elegirnos?</h2>
         <p className="mt-10 text-xl md:text-2xl">
           Contamos con mas de 10 años de expreriencia brindando soluciones y
           atencion personalizada.{" "}

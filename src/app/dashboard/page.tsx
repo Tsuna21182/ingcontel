@@ -1,10 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import ServiciosDestacados from "./secciones/ServiciosDestacados";
-import Elegirnos from "./secciones/Elegirnos";
 import { useState, useEffect } from "react";
-import { ImageCarousel, CotizarButton } from "../components";
+import { CotizarButton } from "../components";
+import { ServiciosDestacados, Elegirnos, Recorrido } from "./secciones";
 
 function DashboarPage() {
   const [mostrar, setMostrar] = useState(false);
@@ -19,7 +18,7 @@ function DashboarPage() {
       <section className="h-[60vh] md:h-[30rem] lg:h-[40rem] w-full ">
         <div className="relative h-full w-full">
           <Image
-            src="/image/redes-telecomunicaciones-dominion.jpg"
+            src="/image/redes-telecomunicaciones-dominion.webp"
             alt="Imagen Hero"
             fill
             priority
@@ -49,19 +48,17 @@ function DashboarPage() {
           </div>
         </div>
       </section>
-
-      <section className="mt-10">
-        <ServiciosDestacados />
-      </section>
-      <section className="mt-10">
-        <Elegirnos />
-      </section>
-      <section className="mt-10 flex justify-around">
-        <ImageCarousel />
-        <div className="hidden md:block">
-          <ImageCarousel />
-        </div>
-      </section>
+      <main className="space-y-15 mt-15">
+        <section>
+          <ServiciosDestacados />
+        </section>
+        <section>
+          <Elegirnos />
+        </section>
+        <section>
+          <Recorrido />
+        </section>
+      </main>
     </>
   );
 }
